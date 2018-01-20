@@ -1,0 +1,17 @@
+.category {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+.marked {
+    background-color: blue;
+}
+
+.category a {  
+    color:black;
+    text-decoration: none;
+}
+
+.marked a {
+    color: white;
+}

@@ -1,0 +1,41 @@
+image: registry.beamonpeople.se/tooling/dingus-gitlab-runner:master
+
+variables:
+  CONTAINER_IMAGE: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
+
+stages:
+- build_app
+- build_image
+- deploy
+
+build_app:
+  image: node:7.7.4
+  stage: build_app
+  variables:
+   PATH_CONTEXT: "/web3punkt0/"
+  script:
+  - npm run build
+  artifacts:
+    paths:
+    - dist/
+
+build_image:
+  stage: build_image
+  only:
+  - master
+  script:
+  - docker build --pull -t $CONTAINER_IMAGE .
+  - docker push $CONTAINER_IMAGE
+
+deploy:
+  stage: deploy
+  only:
+  - master
+  script:
+  - docker-compose stop
+  - docker-compose rm -f
+  - docker-compose pull
+  - docker-compose up -d
+  environment:
+    name: dingus
+    url: https://labs.beamonpeople.se/web3punkt0/
