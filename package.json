@@ -61,6 +61,6 @@
     "prebuild": "yarn && yarn run lint",
     "build": "NODE_ENV=production yarn run webpack -- --progress --display-error-details --color",
     "lint": "yarn run eslint src/javascript/*.js",
-    "start": "NODE_ENV=development && yarn run webpack-dev-server -- --watch"
+    "start": "SET NODE_ENV=development && yarn run webpack-dev-server -- --watch"
   }
 }

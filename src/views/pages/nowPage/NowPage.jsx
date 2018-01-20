@@ -1,8 +1,7 @@
 import React from 'react';
 
-import './Default.css';
 
-export class Default extends React.Component {
+export class NowPage extends React.Component {
   static propTypes = {
   };
 
@@ -12,10 +11,10 @@ export class Default extends React.Component {
   render() {
     return (
       <div>
-        Under konstruktion
+          Just nu händer inte så mycket
       </div>
     );
   }
 }
 
-export default Default;
+export default NowPage;

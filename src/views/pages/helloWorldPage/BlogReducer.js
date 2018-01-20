@@ -1,11 +1,10 @@
 import _ from 'lodash';
 import initialState from '../../../InitialState';
-import * as helloWorldActions from './HelloWorldActions';
 
-export function helloWorld(state = initialState.helloWorld, action) {
+export function blog(state = initialState.helloWorld, action) {
   const clone = _.clone(state);
   switch (action.type) {
-    case helloWorldActions.FETCHED_TEST:
+    case 'BLOG_TEST':
       clone.test = action.payload.test;
       return clone;
     default:
@@ -14,4 +13,5 @@ export function helloWorld(state = initialState.helloWorld, action) {
 }
 
 export function foo() {
+
 }

@@ -1,11 +1,6 @@
 const initialState = {
   helloWorld: {
-    beamz: [],
-  },
-  blog: {
-    categories: [],
-    articles: [],
-    article: { bodyText: '' },
+    test: [],
   },
 };
 

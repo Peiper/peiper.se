@@ -2,16 +2,19 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'whatwg-fetch';
 
+import HeaderComponent from './components/layout/HeaderComponent';
+import FooterComponent from './components/layout/FooterComponent';
+
 import DefaultPage from './Default';
-import Article from './pages/blogPage/ArticlePage';
+import Now from './pages/nowPage/NowPage';
 
 const App = () =>
   <Router basename={process.env.ROOT_URL}>
-    <div className="App">
+    <div className="app">
+      <HeaderComponent />
       <Route exact path="/" component={DefaultPage} />
-      <Route exact path="/blog" component={DefaultPage} />
-      <Route exact path="/blog/:category" component={DefaultPage} />
-      <Route exact path="/article/:id" component={Article} />
+      <Route exact path="/now" component={Now} />
+      <FooterComponent />
     </div>
   </Router>;
 

@@ -1,8 +1,8 @@
-export const FETCHED_BEAMZ = 'FETCHED_BEAMZ';
+export const FETCHED_TEST = 'FETCHED_TEST';
 
-export function fetchedBeamz(beamz) {
+export function fetchedTest(test) {
   return {
-    type: FETCHED_BEAMZ,
-    payload: { beamz },
+    type: FETCHED_TEST,
+    payload: { test },
   };
 }
