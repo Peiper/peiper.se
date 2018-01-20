@@ -40,7 +40,7 @@ export class Default extends React.Component {
   render() {
     return (
       <div>
-        <HeaderComponent backgroundImage="https://images.contentful.com/b6h84isqij0l/1zCsJeWIQsA82wWIwQwOq2/18e7bc698328ff3315aaa74fa8e24b45/Beamonpeople_6Y7B9029_wider30proc_HD_web_1920px.jpg" />
+        <HeaderComponent />
         <ul className="categories">
           <ArticleTypeComponent
             key="defaultCategory"
