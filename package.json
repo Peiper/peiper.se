@@ -1,10 +1,10 @@
 {
-  "name": "web3.0-layout",
+  "name": "peiper.se",
   "version": "1.0.0",
-  "description": "A demo layout for the new Beamon People website (web 3.0)",
+  "description": "A website for Peiper",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.beamonpeople.se:2222/web3punkt0/layout.git"
+    "url": "https://github.com/Peiper/peiper.se.git"
   },
   "license": "MIT",
   "dependencies": {
