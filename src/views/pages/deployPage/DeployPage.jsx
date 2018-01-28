@@ -24,6 +24,7 @@ export class DeployPage extends React.Component {
   render() {
     return (
       <div>
+        Test
         <div>
           <button onClick={this.handleDeployApi()}>Deploy API</button>
         </div>
