@@ -1,7 +1,8 @@
-import aFetch from '../../../shared/authFetch';
-
+const opts = Object.assign({
+  mode: 'no-cors',
+});
 export function deployApi() {
-  return () => aFetch('http://peiper.se:3000/deploy-api')
+  return () => fetch('https://peiper.se:82/deploy-api', opts)
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
@@ -11,7 +12,7 @@ export function deployApi() {
 }
 
 export function deploySite() {
-  return () => aFetch('http://peiper.se:3000/deploy-site')
+  return () => fetch('https://peiper.se:82/deploy-site', opts)
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
