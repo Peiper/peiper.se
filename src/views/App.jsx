@@ -7,6 +7,7 @@ import FooterComponent from './components/layout/FooterComponent';
 
 import DefaultPage from './Default';
 import Now from './pages/nowPage/NowPage';
+import Deploy from './pages/deployPage/DeployPage';
 
 const App = () =>
   <Router basename={process.env.ROOT_URL}>
@@ -14,6 +15,7 @@ const App = () =>
       <HeaderComponent />
       <Route exact path="/" component={DefaultPage} />
       <Route exact path="/now" component={Now} />
+      <Route exact path="/deploy" component={Deploy} />
       <FooterComponent />
     </div>
   </Router>;

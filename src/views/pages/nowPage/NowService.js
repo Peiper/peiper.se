@@ -1,5 +1,5 @@
+import aFetch from '../../../shared/authFetch';
 import { fetchedNow } from './NowActions';
-import aFetch from './authFetch';
 
 let baseApiUrl = '';
 if (process.env.NODE_ENV === 'production') {
