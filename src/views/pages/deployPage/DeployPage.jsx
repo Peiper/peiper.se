@@ -13,6 +13,12 @@ export class DeployPage extends React.Component {
     value: '',
   };
 
+  constructor() {
+    super();
+    this.onClickDeployApi = this.handleDeployApi.bind(this);
+    this.onClickDeploySite = this.handleDeploySite.bind(this);
+  }
+
   handleDeployApi() {
     this.props.dispatch(deployApi());
   }
@@ -24,12 +30,11 @@ export class DeployPage extends React.Component {
   render() {
     return (
       <div>
-        Test
         <div>
-          <button onClick={this.handleDeployApi()}>Deploy API</button>
+          <button onClick={this.onClickDeployApi}>Deploy API</button>
         </div>
         <div>
-          <button onClick={this.handleDeploySite()}>Deploy Site</button>
+          <button onClick={this.onClickDeploySite}>Deploy Site</button>
         </div>
       </div>
     );

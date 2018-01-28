@@ -1,7 +1,7 @@
 import aFetch from '../../../shared/authFetch';
 
 export function deployApi() {
-  return () => aFetch('http://peiper.se:3000')
+  return () => aFetch('http://peiper.se:3000/deploy-api')
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
@@ -11,7 +11,7 @@ export function deployApi() {
 }
 
 export function deploySite() {
-  return () => aFetch('http://peiper.se:3001')
+  return () => aFetch('http://peiper.se:3000/deploy-site')
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
