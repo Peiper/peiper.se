@@ -1,3 +1,2 @@
-export { helloWorld } from './views/pages/helloWorldPage/HelloWorldReducer';
-export { blog } from './views/pages/helloWorldPage/BlogReducer';
+export { deploy } from './views/pages/deployPage/DeployReducer';
 export { now } from './views/pages/nowPage/NowReducer';

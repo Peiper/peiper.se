@@ -1,0 +1,32 @@
+.wrapper {
+    padding-left:10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.done {
+    background-color: rgb(95, 163, 95);
+}
+.started {
+    background-color: rgb(223, 223, 116);
+}
+.queued {
+    background-color: rgb(75, 75, 231);
+}
+.failed {
+    background-color: rgb(253, 65, 65);
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

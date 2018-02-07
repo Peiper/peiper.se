@@ -1,6 +1,7 @@
 const initialState = {
-  helloWorld: {
-    test: [],
+  deploy: {
+    siteBuilds: [],
+    apiBuilds: [],
   },
   now: {
     value: '',

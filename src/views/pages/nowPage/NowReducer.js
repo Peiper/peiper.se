@@ -12,6 +12,3 @@ export function now(state = initialState.now, action) {
       return state;
   }
 }
-
-export function foo() {
-}
