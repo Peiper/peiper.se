@@ -76,8 +76,8 @@ export class DeployPage extends React.Component {
     switch (build.status) {
       default:
         break;
-      case 'DONE':
-        cn = 'done';
+      case 'SUCCESS':
+        cn = 'success';
         break;
       case 'STARTED':
         cn = 'started';

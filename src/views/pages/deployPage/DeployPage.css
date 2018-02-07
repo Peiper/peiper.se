@@ -5,16 +5,16 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 50%;
+    width: 70%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #000;
     text-align: left;
     padding: 8px;
 }
 
-.done {
+.success {
     background-color: rgb(95, 163, 95);
 }
 .started {
