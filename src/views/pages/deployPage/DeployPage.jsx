@@ -118,7 +118,10 @@ export class DeployPage extends React.Component {
               {this.props.deploy.siteBuilds.map(build => this.renderBuildData(build))}
             </tbody>
           </table>
-          <button onClick={this.onClickShowMoreSite}>Visa fler</button>
+          {
+            this.props.deploy.siteBuilds.length >= this.state.siteListLength &&
+            <button onClick={this.onClickShowMoreSite}>Visa fler</button>
+          }
         </div>
         <div>
           <h2>Api builds</h2>
@@ -135,7 +138,10 @@ export class DeployPage extends React.Component {
               {this.props.deploy.apiBuilds.map(build => this.renderBuildData(build))}
             </tbody>
           </table>
-          <button onClick={this.onClickShowMoreApi}>Visa fler</button>
+          {
+            this.props.deploy.apiBuilds.length >= this.state.apiListLength &&
+            <button onClick={this.onClickShowMoreApi}>Visa fler</button>
+          }
         </div>
         <div>
           {/* <button onClick={this.onClickDeployApi}>Deploy API</button> */}
