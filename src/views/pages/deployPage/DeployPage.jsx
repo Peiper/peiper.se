@@ -47,12 +47,14 @@ export class DeployPage extends React.Component {
   }
 
 
-  handleDeployApi() {
-    this.props.dispatch(deployApi());
+  handleDeployApi = version => (e) => {
+    e.preventDefault();
+    this.props.dispatch(deployApi(version));
   }
 
-  handleDeploySite() {
-    this.props.dispatch(deploySite());
+  handleDeploySite = version => (e) => {
+    e.preventDefault();
+    this.props.dispatch(deploySite(version));
   }
 
   handleShowMoreSite() {
@@ -71,7 +73,7 @@ export class DeployPage extends React.Component {
     this.props.dispatch(getLatestApiBuilds(this.state.apiListLength + 5));
   }
 
-  renderBuildData(build) {
+  renderBuildData(build, isSite) {
     let cn = '';
     switch (build.status) {
       default:
@@ -96,6 +98,12 @@ export class DeployPage extends React.Component {
         <td>{build.hash}</td>
         <td>{build.message}</td>
         <td className={cn}>{build.status}</td>
+        {build.status === 'SUCCESS' ?
+          <td>{isSite ?
+            <button onClick={this.onClickDeploySite(build.version)}>Deploy</button> :
+            <button onClick={this.onClickDeployApi(build.version)}>Deploy</button>}
+          </td> :
+          <td>N/A</td>}
       </tr>
     );
   }
@@ -112,10 +120,11 @@ export class DeployPage extends React.Component {
                 <th>Hash</th>
                 <th>Message</th>
                 <th>Status</th>
+                <th>Deploy</th>
               </tr>
             </thead>
             <tbody>
-              {this.props.deploy.siteBuilds.map(build => this.renderBuildData(build))}
+              {this.props.deploy.siteBuilds.map(build => this.renderBuildData(build, true))}
             </tbody>
           </table>
           {
@@ -132,22 +141,17 @@ export class DeployPage extends React.Component {
                 <th>Hash</th>
                 <th>Message</th>
                 <th>Status</th>
+                <th>Deploy</th>
               </tr>
             </thead>
             <tbody>
-              {this.props.deploy.apiBuilds.map(build => this.renderBuildData(build))}
+              {this.props.deploy.apiBuilds.map(build => this.renderBuildData(build, false))}
             </tbody>
           </table>
           {
             this.props.deploy.apiBuilds.length >= this.state.apiListLength &&
             <button onClick={this.onClickShowMoreApi}>Visa fler</button>
           }
-        </div>
-        <div>
-          {/* <button onClick={this.onClickDeployApi}>Deploy API</button> */}
-        </div>
-        <div>
-          {/* <button onClick={this.onClickDeploySite}>Deploy Site</button> */}
         </div>
       </div>
     );

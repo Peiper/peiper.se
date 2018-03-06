@@ -1,8 +1,8 @@
-import { baseApiUrl, aFetch } from '../../../shared/authFetch';
+import { baseApiUrl, aFetch, post } from '../../../shared/authFetch';
 import { fetchedApiBuilds, fetchedSiteBuilds } from './DeployActions';
 
-export function deployApi() {
-  return () => aFetch('https://peiper.se:82//api/deploy')
+export function deployApi(ver) {
+  return () => post('https://peiper.se:82/api/deploy', { version: ver })
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
@@ -11,8 +11,8 @@ export function deployApi() {
     });
 }
 
-export function deploySite() {
-  return () => aFetch('https://peiper.se:82/site/deploy')
+export function deploySite(ver) {
+  return () => post('https://peiper.se:82/site/deploy', { version: ver })
     .then((res) => {
       if (res.status >= 400) {
         console.warn('Request failed');
