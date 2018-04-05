@@ -5,6 +5,7 @@
 }
 
 .wrapper {
+  overflow: auto;
   height: 100%;
   padding: 20px;
 }
