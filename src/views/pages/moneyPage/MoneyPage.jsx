@@ -29,16 +29,14 @@ export class MoneyPage extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="container">
-          <div>
-            <label htmlFor="money"><strong>Money: </strong></label>
-            <input id="money" type="number" onChange={this.valueChange} />
-          </div>
-          <div>
-            <h1>Money per day: </h1>
-            <h1>{this.state.moneyPerDay}</h1>
-          </div>
+      <div className="container">
+        <div>
+          <label htmlFor="money"><strong>Money: </strong></label>
+          <input id="money" type="number" onChange={this.valueChange} />
+        </div>
+        <div>
+          <h1>Money per day: </h1>
+          <h1>{this.state.moneyPerDay}</h1>
         </div>
       </div>
     );
