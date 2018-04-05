@@ -110,7 +110,7 @@ export class DeployPage extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <div>
           <h2>Site builds</h2>
           <table>
