@@ -14,8 +14,14 @@ export class MoneyPage extends React.Component {
   handleValueChange(e) {
     const money = e.target.value;
     const today = new Date();
-    const dim = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-
+    const payDay = new Date(today.getFullYear(), today.getMonth(), 25).getDay();
+    var dim = 25;
+    if(payDay === 0){
+      dim = 23;
+    } else if(payDay === 6) {
+      dim = 24;
+    }
+    
     const moneyPerDay = money / (dim - today.getDate());
 
     this.setState({ moneyPerDay });
